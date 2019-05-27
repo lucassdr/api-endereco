@@ -7,11 +7,14 @@ app.use(bodyParser.json())
 
 app.post('/distancia', (req, res) => {
     
-    // console.log(req.body);
-    res.status(200).json(req.body);
-
-    // res.status(200).json({mensagem: "teste"})
-
+    let addressList = req.body.map((addressStr) => {
+        return { "address": addressStr
+            , "lat": 999
+            , "long": 99999
+        };
+    });
+    
+    res.status(200).json(addressList);
 })
 
 app.listen(port,(err) => {
@@ -20,3 +23,4 @@ app.listen(port,(err) => {
     }
     console.log(`Servidor no ar na porta ${port}`)
 })
+
