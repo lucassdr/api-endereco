@@ -7,35 +7,31 @@ const port = 3000;
 
 app.use(bodyParser.json())
 
-// googleMapsClient.createClient({
-//     key: 'AIzaSyC2mW5fz2VBY9VSztro48UiA1_k1JKdQ9E'
-// })
-
-
-// googleMapsClient.geocode({
-//     address: addressStr
-// }, function (err, res) {
-//     if (!err) {
-//         console.log(res.json.results)
-//     }
-// })
-
-
 app.post('/distancia', (req, res) => {
 
-    let addressList = req.body.map((addressStr) => {
+    let addressList = [];
 
-       
+    req.body.map((addressStr) => {
+
         
 
-        // return res.status(200).json({mensagem: geocode})
-        return {
-            "address": addressStr
-            , "lat": 999
-            , "long": 9999
-        };
+        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${addressStr}&key=AIzaSyC2mW5fz2VBY9VSztro48UiA1_k1JKdQ9E`)
+            .then(res => {
+                addressList.push({
+                    "address": res.data.results[0].formatted_address
+                    , "lat": res.data.results[0].geometry.location.lat
+                    , "long": res.data.results[0].geometry.location.lng
+                })
+                console.log("========================");
+                console.log("addressList", addressList);
+            }).catch(err => {
+                console.log('Error: ' + err)
+            });
+        return true;
+
     });
 
+    console.log("finalizado", addressList);
     res.status(200).json(addressList);
 })
 
@@ -45,4 +41,3 @@ app.listen(port, (err) => {
     }
     console.log(`Servidor no ar na porta ${port}`)
 })
-
