@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const express = require('express');
 const axios = require('axios')
+const googleMapsApiKey = require('../config/configuracao')
 
 router.post('/', (req, res) => {
 
@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
 
     let promisesList = req.body.map((addressStr) => {
 
-        return axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${addressStr}&key=AIzaSyC2mW5fz2VBY9VSztro48UiA1_k1JKdQ9E`)
+        return axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${addressStr}&key=${googleMapsApiKey}`)
             .then(res => {
                 addressList.push({
                     "address": res.data.results[0].formatted_address
