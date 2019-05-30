@@ -37,8 +37,7 @@ let calculaDistancia = (req, res) => {
             let addressListCalculado = combinedAddressList.map((addressCombined) => {
                 let distancia = calcularDistancia(addressCombined.addressA.lat, addressCombined.addressA.long
                     , addressCombined.addressB.lat, addressCombined.addressB.long);
-
-                addressCombined.distancia = distancia;
+                addressCombined.distancia = distancia.toFixed(2);
                 return addressCombined;
 
             })
