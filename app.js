@@ -1,15 +1,14 @@
 const express = require('express');
-const bodyParser = require('body-parser')
-const rotaDistancia = require('../desafio/rotas/distancia')
-const server = require('./servidor/servidor')
+const bodyParser = require('body-parser');
+
+const server = require('./servidor/servidor');
 const app = express();
 
-app.use(bodyParser.json())
+const DistanceController = require('./rotas/DistanceController');
 
-app.use('/', rotaDistancia)
-app.use('/distancia', rotaDistancia)
+app.use(bodyParser.json());
+
+DistanceController.start(app);
 
 app.listen(server);
-
-
 module.exports = app;
