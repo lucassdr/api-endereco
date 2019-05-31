@@ -10,8 +10,6 @@ let start = (app) => {
 
 let calculaDistancia = (req, res) => {
 
-    // console.log('iniciou distancia');
-
     let addressList = [];
 
     let promisesList = req.body.map((addressStr) => {
@@ -31,7 +29,6 @@ let calculaDistancia = (req, res) => {
 
     Promise.all(promisesList)
         .then(function (results) {
-            // console.log("finalizado", addressList);
             let combinedAddressList = combinaton(addressList);
 
             let addressListCalculado = combinedAddressList.map((addressCombined) => {
@@ -44,6 +41,8 @@ let calculaDistancia = (req, res) => {
                 return addressCombined;
 
             });
+
+            addressListCalculado.sort((a,b) => a.distancia - b.distancia);
 
             res.json({ addressListCalculado });
         });
