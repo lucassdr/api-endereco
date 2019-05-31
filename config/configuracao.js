@@ -1,3 +1,3 @@
-const googleMapsApiKey = "API_KEY_DO_GOOGLE";
+const googleMapsApiKey = `$GOOGLE_API_KEY`;
 
 module.exports = googleMapsApiKey;
