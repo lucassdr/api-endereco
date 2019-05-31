@@ -1,7 +1,8 @@
 # **API de endereço**
 
-####  Status:
-[![Build Status](https://travis-ci.org/lucassdr/api-endereco.svg?branch=master)](https://travis-ci.org/lucassdr/api-endereco)
+####  Quantidade de acessos ao projeto:
+[![HitCount](http://hits.dwyl.io/lucassdr/api-endereco.svg)](http://hits.dwyl.io/lucassdr/api-endereco)
+
 
 ##  Nome do projeto
 -   **API Endereço**
