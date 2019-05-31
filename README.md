@@ -6,7 +6,7 @@
 ##  Autor
 -   [Lucas Sodré](https://github.com/lucassdr)
 
-##  Descriação
+##  Descrição
 -   API que através da passagem de N endereços através do método **POST** na URL **'/distancia'** retorna a latitude e longitude do endereço e, caso tenha mais de um endereço, retorna a distancia em KM entre os dois.
 -   Também exibe os endereços mais próximos e mais longes.
 
