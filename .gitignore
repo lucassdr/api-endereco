@@ -1,6 +1,3 @@
 node_modules
 .gitignore
 config
-
-
-# https://maps.googleapis.com/maps/api/geocode/json?address=Avenida General Rondon, 505, Vila Leopoldina, Duque de Caxias, Rio de Janeiro, 25060236&key=AIzaSyC2mW5fz2VBY9VSztro48UiA1_k1JKdQ9E
