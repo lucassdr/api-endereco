@@ -13,6 +13,10 @@
 ###  Linguagem de programação
 -   NodeJS
 
+##  Executando o projeto
+-   Realize o download do projeto ou execute o comando git clone https://github.com/lucassdr/api-endereco.git
+-   
+
 ### Exemplo de requisição
 ```
 curl -X POST \
