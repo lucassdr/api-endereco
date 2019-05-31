@@ -1,5 +1,9 @@
 # **API de endereço**
 
+####  Quantidade de acessos ao projeto:
+[![HitCount](http://hits.dwyl.io/lucassdr/api-endereco.svg)](http://hits.dwyl.io/lucassdr/api-endereco)
+
+
 ##  Nome do projeto
 -   **API Endereço**
 
@@ -18,7 +22,8 @@
 -   Após baixado o projeto, execute o comando ```npm install```;
 -   Vá ao arquivo ```configuracao.js``` dentro da pasta **config** e substitua o texto **"API_KEY_DO_GOOGLE"** pela sua **chave api** obtida;
 -   Para ligar o servidor local, com padrão na porta 3000, execute o comando ```nodemon app.js```
--   O projeto estará respondendo em **localhost:3000/distancia**.
+-   O projeto estará respondendo em **localhost:3000/distancia**;
+-   Realize a requisição abaixo via *curl* para testar o serviço;
 
 ### Exemplo de requisição
 ```
@@ -34,3 +39,5 @@ curl -X POST \
  , "Rua Professor Jose de Souza Herdy, 1160 - Jardim Vinte e Cinco de Agosto, Duque de Caxias - RJ, 25071-202"
 ]'
 ```
+
+-   Para encerrar o serviço execute o comando ```CTRL + C``` em seu terminal.
