@@ -1,14 +1,14 @@
 const axios = require('axios');
 const urlGoogleMaps = require('../constantes/constantes');
 const combinaton = require('../controle/combinacao');
-const calculateDistance = require('../controle/calculardistancia');
+const calcularDistancia = require('../controle/calculardistancia');
 
 let start = (app) => {
-    app.post('/distancia', calculatesDistance);
+    app.post('/distancia', calculaDistancia);
     app.get('/', hello);
 };
 
-let calculatesDistance = (req, res) => {
+let calculaDistancia = (req, res) => {
 
     let addressList = [];
 
@@ -31,20 +31,20 @@ let calculatesDistance = (req, res) => {
         .then(function (results) {
             let combinedAddressList = combinaton(addressList);
 
-            let calculatedAddressList = combinedAddressList.map((addressCombined) => {
-                let distance = calculateDistance(addressCombined.addressA.lat, addressCombined.addressA.long
+            let addressListCalculado = combinedAddressList.map((addressCombined) => {
+                let distancia = calcularDistancia(addressCombined.addressA.lat, addressCombined.addressA.long
                     , addressCombined.addressB.lat, addressCombined.addressB.long);
 
-                addressCombined.distance = distance;
-                addressCombined.distanceStr = distance.toFixed(1).concat(" Km de distância.");
+                addressCombined.distancia = distancia;
+                addressCombined.distanciaStr = distancia.toFixed(1).concat(" Km de distância.");
 
                 return addressCombined;
 
             });
 
-            calculatedAddressList.sort((a,b) => a.distance - b.distancia);
+            addressListCalculado.sort((a,b) => a.distancia - b.distancia);
 
-            res.json({ calculatedAddressList });
+            res.json({ addressListCalculado });
         });
 }
 
