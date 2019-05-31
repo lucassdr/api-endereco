@@ -14,8 +14,10 @@
 -   NodeJS
 
 ##  Executando o projeto
--   Realize o download do projeto ou execute o comando git clone https://github.com/lucassdr/api-endereco.git
--   
+-   Realize o download do projeto ou execute o comando ```git clone https://github.com/lucassdr/api-endereco.git```
+-   Após baixado o projeto, execute o comando ```npm install```
+-   Para ligar o servidor local, com padrão na porta 3000, execute o comando ```nodemon app.js````
+-   O projeto estará respondendo em *localhost:3000/distancia*
 
 ### Exemplo de requisição
 ```
